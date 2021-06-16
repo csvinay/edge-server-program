@@ -24,7 +24,7 @@ def MQTT_subscribe(broker, topic):
     print("Connecting to broker", broker)
     client.connect(broker)
     print(f"Subscribing {topic}")
-    client.subscribe(f"{topic}")
+    client.subscribe(f"{topic}", qos=2)
     client.on_message = on_message
     client.loop_forever()
 
