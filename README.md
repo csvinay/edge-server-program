@@ -172,10 +172,25 @@ Here in the above image, we can see the log of the data received by the server.p
 
 ### Test case 4: Edge side program is first run and then server side program is running
 
+In this case, the edge side program is first run and then the server side program is run after sometime. To test this case, 
 
+First, the edge.py program is run in one terminal
+
+and then after sometime (approximately 15 seconds) the server.py program is run, the output is as follows:
+
+![image](https://user-images.githubusercontent.com/43710239/122285158-0081dd00-cf0c-11eb-8500-6b67aa583ee2.png)
+
+Here we can see that the data rows are being publsihed from the edge.py program smoothly. 
+
+![output(5)](https://user-images.githubusercontent.com/43710239/122286897-fcef5580-cf0d-11eb-8b4a-110094751fb8.png)
+
+Here in the above image, we can see the log of the data received by the server.py program. Since the server.py program is start after sometime of the starting of edge.py program, once the connection is established by the server.py program, the datarows published by the edge.py were immediately retained and subscribed by the server.py program from the broker. The timestamp marked in green rectangle depicts the datarows subscribed time and shows us that the data rows have been immediately subscribed after the server.py program has established the connection. The column of the blue rectangle specifies the time the datarow has been published/queued on the edge.py program side. 
 
 ### Test case 5: First the Edge side program is run and then after sometime the server side program is run
 
+Several cominations of above test cases were tested and run on the programs and random disturbances and breaks were tested on the programs and the data transfer was as expected in the given problem statement.
+
+NOTE: The 1st column (timestamp) was left as it is even though I was capable of removing it because it came along with the dataset to be transfered. 
 
 
 
