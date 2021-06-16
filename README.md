@@ -53,6 +53,8 @@ To get a local copy up and running follow these simple steps.
   pip install -r requirements.txt
   ```  
 
+## MQTT Protocol
+
 ### Server Program
 
 1. The following tasks are accomplished by running the server program:
@@ -112,7 +114,7 @@ The above output is produced when the server.py program is run first and then th
 
 To test the reliability of the programs, several test cases were run where there were random disturbances in the server and edge side. 
 
-NOTE: For faster testing purpose, the time interval between each data row transfer is changed from 60 seconds to 5 seconds (This can be altered in the edge.py program in line 37
+NOTE: For faster testing purpose, the time interval between each data row transfer is changed from 60 seconds to 5 seconds (This can be altered in the edge.py program in line 37)
 
 ### Test case 1: Edge side connection is lost/broken and server side is running
 
@@ -191,6 +193,3 @@ Here in the above image, we can see the log of the data received by the server.p
 Several cominations of above test cases were tested and run on the programs and random disturbances and breaks were tested on the programs and the data transfer was as expected in the given problem statement.
 
 NOTE: The 1st column (timestamp) was left as it is even though I was capable of removing it because it came along with the dataset to be transfered. 
-
-
-
