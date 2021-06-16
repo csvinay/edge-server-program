@@ -36,7 +36,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-0. Setup the conda environment and download the required dependencies. (or else it can even be done on the existing python3 setup on your local machine according to your convenience)
+0. Setup the conda environment and download the required dependencies. (or else this part can be skipped directly to downloading the requirements and can be run on the existing python3 setup on your local machine according to your convenience)
 
 * Open terminal.
 * run the following command in the terminal (Incase anaconda is not installed on your system - Do follow [this documentation](https://docs.anaconda.com/anaconda/install/)):
