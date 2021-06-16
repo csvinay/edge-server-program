@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-# Zentaix IoT Intern Task
+# Zenatix IoT Intern Task
 
 Consider that an IoT device publishes data to a middleware software which is then published to the cloud.
 
