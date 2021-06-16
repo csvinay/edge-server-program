@@ -55,6 +55,8 @@ To get a local copy up and running follow these simple steps.
 
 ## MQTT Protocol
 
+MQTT is a lightweight publish/subscribe messaging protocol designed for M2M (machine to machine) telemetry in low bandwidth environments. Here we use MQTT protocol because it is the most robust protocol which can handle connection disturbances and yet complete the data transfer successfully. There will be three parts: edge, broker, server. The edge pushes the data to the broker and the server subscribes to the broker which in turn publishes data to the server through a unique specified topic. 
+
 ### Server Program
 
 1. The following tasks are accomplished by running the server program:
@@ -79,6 +81,10 @@ Output = recvdataset.csv file is generated with all the data points received fro
 Final Output = dataset.csv file is read and all the points are published to the server.
 
 ## Run the Projcet
+
+NOTE: All the code has been well commented and structured and there are two variables which have to be unique:
+* topic = "datarow" in both server.py and edge.py. Incase there is any problem, change the topic to much more unique value accordingly
+* client_id="1259396904" in server.py. This is used to retain the session when there is any disturbance and has to be unique. Incase there is any problem, change the client_id to much more unique value accordingly.
 
 First we have to run the `server.py` program so that it connects to the external broker and can wait for the edge program to publish the data. 
 
