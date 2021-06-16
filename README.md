@@ -103,3 +103,31 @@ Then the server.py program waits for the edge.py program to publish data so that
 
 Then, we will run the `edge.py` program in another terminal, and we get the folliwng initial output:
 ![image](https://user-images.githubusercontent.com/43710239/122267703-d7a41c80-cef8-11eb-88b3-65a8d2dffcca.png)
+
+Then the data is transfered from edge.py program side to server.py program side and we can see the data received successfully log on the server.py terminal as follows:
+
+![output](https://user-images.githubusercontent.com/43710239/122281181-9cf5b080-cf07-11eb-8366-52de00f92836.png)
+
+The above output is produced when the server.py program is run first and then the edge.py program is run next and there are no disturbances in the server and edge side. 
+
+To test the reliability of the programs, several test cases were run where there were random disturbances in the server and edge side. 
+
+NOTE: For faster testing purpose, the time interval between each data row transfer is changed from 60 seconds to 5 seconds (This can be altered in the edge.py program in line 37
+
+### Test case 1: Edge side connection is lost/broken and server side is running
+
+In this case, the edge side is broken and the server side would be running smoothly. To test this case, 
+
+The connection of edge.py is broken by turning of the wireless connectivity to the 
+
+### Test case 2: Server side connection is broken and edge side is running
+
+### Test case 3: Server side program is stopped and rerun and edge side is running
+
+### Test case 4: Edge side program is first run and then server side program is running
+
+### Test case 5: First the Edge side program is run and then after sometime the server side program is run
+
+
+
+
