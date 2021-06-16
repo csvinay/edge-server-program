@@ -71,7 +71,8 @@ Output = recvdataset.csv file is generated with all the data points received fro
 * Each data point is read after every 60-sec delay and publish to the cloud(live data)
 * If the broker(server) returns failure or server is stopped the data point is buffered locally(it now becomes buffered data).
 * Once the connection is restablished by the server program, All the buffered data will be published along with the live data without any disturbance. While publishing and cleaning the buffered data, the live data is not stopped (which is obtained by the mqtt functionalities)
-** Example: 1st & 2nd minute, 1st & 2nd data points published successfully, 3rd & 4th minute, 3rd & 4th data points failed and got buffered, 5th min 5th datapoint and all the buffered data published.
+- Example: 1st & 2nd minute, 1st & 2nd data points published successfully, 3rd & 4th minute, 3rd & 4th data points failed and got buffered, 5th min 5th datapoint and all the buffered data published.
+* A function to get the count of successfully transmitted and buffered data at any point in time.
 
 Final Output = dataset.csv file is read and all the points are published to the server.
 
@@ -97,6 +98,8 @@ To run the `edge.py`, run the following commands from initial project directory.
 
 Firstly, after running the `server.py` program in one terminal, we get the following output:
 ![image](https://user-images.githubusercontent.com/43710239/122220987-7b2c0780-cece-11eb-8c79-1bd5897d3cb0.png)
+
 Then the server.py program waits for the edge.py program to publish data so that it can receive the data. 
 
 Then, we will run the `edge.py` program in another terminal, and we get the folliwng initial output:
+![image](https://user-images.githubusercontent.com/43710239/122267703-d7a41c80-cef8-11eb-88b3-65a8d2dffcca.png)
