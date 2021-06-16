@@ -7,9 +7,10 @@ import datetime
 
 def MQTT_publish(broker, file, topic):
     def on_publish(client,userdata,result):             #create function for callback
-        print("data published \n")
+        print("data row:")
         pass
-    client = mqtt.Client(client_id="1259396903", clean_session=False)
+    count = 0 
+    client = mqtt.Client()
     print("Connecting to broker", broker)
     client.connect(broker)
     #client.loop_start()
@@ -25,7 +26,9 @@ def MQTT_publish(broker, file, topic):
         tst = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
         line.append(tst)
         strline = json.dumps(line)
-        client.on_publish = on_publish  
+        client.on_publish = on_publish 
+        count +=1 
+        print(count,"published")
         client.publish(f"{topic}", strline, qos=2, retain=True)
         time.sleep(1)
     client.loop_stop()
