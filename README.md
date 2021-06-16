@@ -118,9 +118,23 @@ NOTE: For faster testing purpose, the time interval between each data row transf
 
 In this case, the edge side is broken and the server side would be running smoothly. To test this case, 
 
-The connection of edge.py is broken by turning of the wireless connectivity to the 
+First, the edge.py and the server.py are run one after another and then, 
+
+The connection of edge.py is broken by turning off the wireless connectivity to the edge.py program side terminal.
+
+After sometime the wifi is turned on and the connection is re-established, the output is as follows:
+
+![image](https://user-images.githubusercontent.com/43710239/122283628-61a8b100-cf0a-11eb-9dd4-cbcb752f74d6.png)
+
+Here we can see that till 3rd datarow transfer, the connection was good and there was no distubance. After the 3rd data row transfer, the connection is cut (wifi was turned off) and after sometime (around 12-15 seconds), the wifi was turned on again and the connection was re-established, and here we can see that `4,5,6` rows were buffered locally and queued upto the latest data row (6th) and then published immediately after the connection is established. 
+
+![output(1)](https://user-images.githubusercontent.com/43710239/122284304-13e07880-cf0b-11eb-8212-664469a0122d.png)
+
+Here in the above image, we can see the log of the data received by the server.py program. Till 3rd data row everything was fine and after that, we can observe that the datarows once published by the edge.py after the break were immediately retained and subscribed by the server.py program from the local buffer of the edge.py program. The timestamp marked in green rectangle depicts the data subscribed time and shows us  that the data rows have been immediately subscribed after the edge.py program has pubished the queue after the re-establishment of the connection. The column of the blue rectangle specifies the time the datarow has been published/queued on the edge.py program side.   
 
 ### Test case 2: Server side connection is broken and edge side is running
+
+
 
 ### Test case 3: Server side program is stopped and rerun and edge side is running
 
