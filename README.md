@@ -130,11 +130,26 @@ Here we can see that till 3rd datarow transfer, the connection was good and ther
 
 ![output(1)](https://user-images.githubusercontent.com/43710239/122284304-13e07880-cf0b-11eb-8212-664469a0122d.png)
 
-Here in the above image, we can see the log of the data received by the server.py program. Till 3rd data row everything was fine and after that, we can observe that the datarows once published by the edge.py after the break were immediately retained and subscribed by the server.py program from the local buffer of the edge.py program. The timestamp marked in green rectangle depicts the data subscribed time and shows us  that the data rows have been immediately subscribed after the edge.py program has pubished the queue after the re-establishment of the connection. The column of the blue rectangle specifies the time the datarow has been published/queued on the edge.py program side.   
+Here in the above image, we can see the log of the data received by the server.py program. Till 3rd data row everything was fine and after that, we can observe that the datarows once published by the edge.py after the break were immediately retained and subscribed by the server.py program from the local buffer of the edge.py program. The timestamp marked in green rectangle depicts the datarows subscribed time and shows us  that the data rows have been immediately subscribed after the edge.py program has pubished the queue after the re-establishment of the connection. The column of the blue rectangle specifies the time the datarow has been published/queued on the edge.py program side.   
 
 ### Test case 2: Server side connection is broken and edge side is running
 
 
+In this case, the server side is broken and the edge side would be running smoothly. To test this case, 
+
+First, the edge.py and the server.py are run one after another and then, 
+
+The connection of server.py is broken by turning off the wireless connectivity to the server.py program side terminal.
+
+After sometime the wifi is turned on and the connection is re-established, the output is as follows:
+
+![image](https://user-images.githubusercontent.com/43710239/122285158-0081dd00-cf0c-11eb-8500-6b67aa583ee2.png)
+
+Here we can see that the data rows are being publsihed from the edge.py program smoothly. 
+
+![output(2)](https://user-images.githubusercontent.com/43710239/122285108-efd16700-cf0b-11eb-8086-41dbda44f7b6.png)
+
+Here in the above image, we can see the log of the data received by the server.py program. Till 3rd data row everything was fine and after that, we can observe that the server.py connection is cut by turning off the wifi and once the wifi is turned on and the connection is re-establoshed by the server.py program, the datarows published by the edge.py were immediately retained and subscribed by the server.py program from the broker. The timestamp marked in green rectangle depicts the datarows subscribed time and shows us that the data rows have been immediately subscribed after the server.py program has re-established the connection. The column of the blue rectangle specifies the time the datarow has been published/queued on the edge.py program side. 
 
 ### Test case 3: Server side program is stopped and rerun and edge side is running
 
