@@ -14,7 +14,7 @@ def on_message(client, userdata, message):
     tst = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
     row.append(tst)
     print("Receieved data successfully",row)
-    with open('dataset.csv', 'a') as f_object:
+    with open('recvdataset.csv', 'a') as f_object:
         writer_object = writer(f_object)
         writer_object.writerow(row)
         f_object.close()
