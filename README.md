@@ -1,6 +1,10 @@
 <!-- ABOUT THE PROJECT -->
 # Zentaix IoT Intern Task
 
+Consider that an IoT device publishes data to a middleware software which is then published to the cloud.
+
+While you are developing an IoT solution, you do not have access to all the physical sensors and therefore you decide to simulate all types of sensors that exist in a candy factory. A CSV is shared which contains simulated sensor data.
+
 In this project, we have two programs:
 * **Edge Program**: 
   
@@ -70,3 +74,29 @@ Output = recvdataset.csv file is generated with all the data points received fro
 ** Example: 1st & 2nd minute, 1st & 2nd data points published successfully, 3rd & 4th minute, 3rd & 4th data points failed and got buffered, 5th min 5th datapoint and all the buffered data published.
 
 Final Output = dataset.csv file is read and all the points are published to the server.
+
+## Run the Projcet
+
+First we have to run the `server.py` program so that it connects to the external broker and can wait for the edge program to publish the data. 
+
+Run the follwing two commands to run the server.py program
+  ```sh
+  cd server
+  python server.py
+  ```  
+Now the server connects to the broker and subscribes the data points from the particular topic published by the edge program.
+
+To run the `edge.py`, run the following commands from initial project directory.
+  ```sh
+  cd edge
+  python edge.py
+  ```  
+  Here the `edge.py` program connects to the external broker and publishes the data on the specified topic and also returns whether the data has been published or not. Even if the edge program is not connected with the broker, the data rows get buffered and when it is connected with the broker they get received by the broker and will be subscribed by server.py program. 
+
+## Output
+
+Firstly, after running the `server.py` program in one terminal, we get the following output:
+![image](https://user-images.githubusercontent.com/43710239/122220987-7b2c0780-cece-11eb-8c79-1bd5897d3cb0.png)
+Then the server.py program waits for the edge.py program to publish data so that it can receive the data. 
+
+Then, we will run the `edge.py` program in another terminal, and we get the folliwng initial output:
