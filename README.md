@@ -35,6 +35,13 @@ In this project, we have two programs:
 
 To get a local copy up and running follow these simple steps.
 
+First clone the repository by running the following command in the terminal of your desired directory:
+
+  ```sh
+   git clone https://github.com/csvinay/zenatixtask.git
+   ```
+Then setup the prerequisites to run the programs.
+
 ### Prerequisites
 
 0. Setup the conda environment and download the required dependencies. (or else this part can be skipped directly to downloading the requirements and can be run on the existing python3 setup on your local machine according to your convenience)
@@ -89,14 +96,14 @@ NOTE: All the code has been well commented and structured and there are two vari
 
 First we have to run the `server.py` program so that it connects to the external broker and can wait for the edge program to publish the data. 
 
-Run the follwing two commands to run the server.py program
+Run the follwing two commands from initial project directory in one terminal to run the server.py program
   ```sh
   cd server
   python server.py
   ```  
 Now the server connects to the broker and subscribes the data points from the particular topic published by the edge program.
 
-To run the `edge.py`, run the following commands from initial project directory.
+To run the `edge.py`, open another terminal in same or different machine according to your convenience and run the following commands from initial project directory.
   ```sh
   cd edge
   python edge.py
