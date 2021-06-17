@@ -40,6 +40,12 @@ First clone the repository by running the following command in the terminal of y
   ```sh
    git clone https://github.com/csvinay/zenatixtask.git
    ```
+
+Enter into the project directory by running the following command:
+
+  ```sh
+   cd zenatixtask
+   ```
 Then setup the prerequisites to run the programs.
 
 ### Prerequisites
