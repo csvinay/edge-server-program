@@ -208,7 +208,7 @@ Here we can see that the data rows are being publsihed from the edge.py program 
 
 Here in the above image, we can see the log of the data received by the server.py program. Since the server.py program is start after sometime of the starting of edge.py program, once the connection is established by the server.py program, the datarows published by the edge.py were immediately retained and subscribed by the server.py program from the broker. The timestamp marked in green rectangle depicts the datarows subscribed time and shows us that the data rows have been immediately subscribed after the server.py program has established the connection. The column of the blue rectangle specifies the time the datarow has been published/queued on the edge.py program side. 
 
-### Test case 5: First the Edge side program is run and then after sometime the server side program is run
+### Test case 5: Random tests
 
 Several cominations of above test cases were tested and run on the programs and random disturbances and breaks were tested on the programs and the data transfer was as expected in the given problem statement.
 
