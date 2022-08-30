@@ -1,5 +1,5 @@
 <!-- ABOUT THE PROJECT -->
-# Zenatix IoT Intern Task
+# Edge Server Program
 
 Consider that an IoT device publishes data to a middleware software which is then published to the cloud.
 
@@ -38,13 +38,13 @@ To get a local copy up and running follow these simple steps.
 First clone the repository by running the following command in the terminal of your desired directory:
 
   ```sh
-   git clone https://github.com/csvinay/zenatixtask.git
+   git clone https://github.com/csvinay/edge_server_program.git
    ```
 
 Enter into the project directory by running the following command:
 
   ```sh
-   cd zenatixtask
+   cd edge_server_program
    ```
 Then setup the prerequisites to run the programs.
 
@@ -55,12 +55,12 @@ Then setup the prerequisites to run the programs.
 * Open terminal.
 * run the following command in the terminal (Incase anaconda is not installed on your system - Do follow [this documentation](https://docs.anaconda.com/anaconda/install/)):
   ```sh
-   conda create -n zenatixtask python=3.8.8
+   conda create -n edge_server python=3.8.8
    ```
    
    activate the environment using the command:
    ```sh
-   conda activate zenatixtask
+   conda activate edge_server
    ```
 * run the follwing command to download the dependencies 
   ```sh
